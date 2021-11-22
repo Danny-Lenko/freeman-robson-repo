@@ -1,13 +1,25 @@
 "use strict"
 
-let location1 = 3;
-let location2 = 4;
-let location3 = 5;
+let location1 = 0;
+let location2 = 0;
+let location3 = 0;
 
 let guess;
 let guessesTotal = 0;
 let hits = 0;
 let isSunk = false;
+let accuracy;
+
+function defineShipLocation() {
+   location1 = Math.floor(Math.random() * 5);
+   location2 = location1 + 1;
+   location3 = location2 + 1;
+}
+defineShipLocation();
+
+console.log(location1);
+console.log(location2);
+console.log(location3);
 
 while (!isSunk) {
    guess = +prompt("Ready, aim, fire! (enter a number 0-6):");
@@ -25,8 +37,13 @@ while (!isSunk) {
       }
       if (hits === 3) {
          isSunk = true;
+         alert('Enemy ship has been destroyed!');
       }
    }
 }
-alert(`You've won! Your score is ${guessesTotal}`);
+accuracy = 3 / guessesTotal * 100;
+alert (`
+   You've won! It took you ${guessesTotal} tries. 
+   Your accuracy is ${accuracy}%
+`);
 
