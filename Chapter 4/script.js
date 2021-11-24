@@ -1,27 +1,45 @@
 "use strict"
 
 let scores = [60, 50, 69, 58, 54, 54, 58, 50, 52, 54, 48, 69];
-let largest = scores[0];
+let costs = [.25, .27, .25, .33, .31, .25, .29, .21, .24, .25, .32, .24];
+let largest = 0;
 let largestIndexesArr = [];
-let largestIndex1;
-let largestIndex2;
+let soughtForIndex;
 
-for (let i = 0; i < scores.length; i++) {
-   console.log(`Bubble solution # ${i} score: ${scores[i]}`);
-   if (scores[i] > largest) {
-      largest = scores[i];
+function printAndGetHighScore(scores) {
+   for (let i = 0; i < scores.length; i++) {
+      console.log(`Bubble solution # ${i} score: ${scores[i]}`);
+      if (scores[i] > largest) {
+         largest = scores[i];
+      }
    }
 }
 
-for (let i = 0; i < scores.length; i++) {
-   if (scores[i] === largest) {
-      largestIndexesArr.push(i);
-   }
-}
-
-largestIndex1 = largestIndexesArr[0];
-largestIndex2 = largestIndexesArr[1];
-
+printAndGetHighScore(scores);
 console.log(`Bubble tests: ${scores.length}`);
 console.log(`Highest bubble score: ${largest}`);
-console.log(`Solution with highest score: #${largestIndex1}, #${largestIndex2}`);
+
+function getHighScoreIndexes(scores, largest) {
+   for (let i = 0; i < scores.length; i++) {
+      if (scores[i] === largest) {
+         largestIndexesArr.push(i);
+      }
+   }
+}
+getHighScoreIndexes(scores, largest);
+
+console.log("Solution with highest score: " + largestIndexesArr);
+
+function getMostCostEffectiveSolution(scores, costs, highScore) {
+   let minCost = 1;
+   for (let i = 0; i < scores.length; i++) {
+      if (scores[i] === highScore) {
+         if (minCost > costs[i]) {
+            soughtForIndex = i;
+            minCost = costs[i];
+         }
+      }
+   }
+}
+getMostCostEffectiveSolution(scores, costs, largest);
+console.log("Bubble Solution #" + soughtForIndex + " is the most cost effective");
