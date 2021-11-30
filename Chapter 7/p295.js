@@ -21,3 +21,9 @@ console.log(typeof test7);
 console.log(typeof test8);
 console.log(typeof test9);
 console.log(typeof test10);
+
+if (99 == "99") {
+   console.log("A number equals a string!");
+} else {
+   console.log("No way a number equals a string");
+}
