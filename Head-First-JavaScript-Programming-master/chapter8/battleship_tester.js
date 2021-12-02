@@ -131,43 +131,43 @@ var model = {
 }; 
 
 
-model.fire("53"); // miss
+// model.fire("53"); // miss
 
-model.fire("06"); // hit
-model.fire("16"); // hit
-model.fire("26"); // hit
+// model.fire("06"); // hit
+// model.fire("16"); // hit
+// model.fire("26"); // hit
 
-model.fire("34"); // hit
-model.fire("24"); // hit
-model.fire("44"); // hit
+// model.fire("34"); // hit
+// model.fire("24"); // hit
+// model.fire("44"); // hit
 
-model.fire("12"); // hit
-model.fire("11"); // hit
-model.fire("10"); // hit
+// model.fire("12"); // hit
+// model.fire("11"); // hit
+// model.fire("10"); // hit
 
 
 
 // testing parseGuess
-// function parseGuess(guess) {
-// 	var alphabet = ["A", "B", "C", "D", "E", "F", "G"];
+function parseGuess(guess) {
+	var alphabet = ["A", "B", "C", "D", "E", "F", "G"];
 
-// 	if (guess === null || guess.length !== 2) {
-// 		alert("Oops, please enter a letter and a number on the board.");
-// 	} else {
-// 		var row = alphabet.indexOf(guess.charAt(0));
-// 		var column = guess.charAt(1);
+	if (guess === null || guess.length !== 2) {
+		alert("Oops, please enter a letter and a number on the board.");
+	} else {
+		var row = alphabet.indexOf(guess.charAt(0));
+		var column = guess.charAt(1);
 		
-// 		if (isNaN(row) || isNaN(column)) {
-// 			alert("Oops, that isn't on the board.");
-// 		} else if (row < 0 || row >= model.boardSize ||
-// 		           column < 0 || column >= model.boardSize) {
-// 			alert("Oops, that's off the board!");
-// 		} else {
-// 			return row + column;
-// 		}
-// 	}
-// 	return null;
-// }
+		if (isNaN(row) || isNaN(column)) {
+			alert("Oops, that isn't on the board.");
+		} else if (row < 0 || row >= model.boardSize ||
+		           column < 0 || column >= model.boardSize) {
+			alert("Oops, that's off the board!");
+		} else {
+			return row + column;
+		}
+	}
+	return null;
+}
 
 /*
 console.log("Testing parseGuess");
@@ -180,20 +180,20 @@ console.log(parseGuess("A7")); // invalid
 
 // testing the controller
 
-// var controller = {
-// 	guesses: 0,
+var controller = {
+	guesses: 0,
 
-// 	processGuess: function(guess) {
-// 		var location = parseGuess(guess);
-// 		if (location) {
-// 			this.guesses++;
-// 			var hit = model.fire(location);
-// 			if (hit && model.shipsSunk === model.numShips) {
-// 					view.displayMessage("You sank all my battleships, in " + this.guesses + " guesses");
-// 			}
-// 		}
-// 	}
-// }
+	processGuess: function(guess) {
+		var location = parseGuess(guess);
+		if (location) {
+			this.guesses++;
+			var hit = model.fire(location);
+			if (hit && model.shipsSunk === model.numShips) {
+					view.displayMessage("You sank all my battleships, in " + this.guesses + " guesses");
+			}
+		}
+	}
+}
 
 
 // You should see three ships on the board, one miss, and the message
