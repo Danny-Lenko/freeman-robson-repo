@@ -5,20 +5,32 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Pictures Game</title>
-   <style> body { margin: 20px; } </style>
+   <style> 
+      body { margin: 20px; } 
+      img { margin: 20px; }
+   </style>
    <script>
       window.onload = init;
       function init() {
-         let image = document.getElementById('zero');
-         image.onclick = showAnswer;
+         let images = document.getElementsByTagName('img');
+         for (let i = 0; i < images.length; i++) {
+            images[i].onclick = showAnswer;
+         }
       }
-      function showAnswer() {
-         let image = document.getElementById('zero');
-         image.src = 'img/zero.jpg';
+      function showAnswer(e) {
+         let image = e.target;
+         let name = image.id;
+         name = name + '.jpg';
+         image.src = 'img/' + name;
       }
    </script>
 </head>
 <body>
    <img id="zero" src="img/zeroblur.jpg" alt="">
+   <img id="one" src="img/oneblur.jpg" alt="">
+   <img id="two" src="img/twoblur.jpg" alt="">
+   <img id="three" src="img/threeblur.jpg" alt="">
+   <img id="four" src="img/fourblur.jpg" alt="">
+   <img id="five" src="img/fiveblur.jpg" alt="">
 </body>
 </html>
