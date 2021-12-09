@@ -14,13 +14,20 @@
       function init() {
          let images = document.getElementsByTagName('img');
          for (let i = 0; i < images.length; i++) {
-            images[i].onclick = showAnswer;
+            images[i].onmouseover = showAnswer;
+            images[i].onmouseout = reblur;
          }
       }
       function showAnswer(e) {
          let image = e.target;
          let name = image.id;
          name = name + '.jpg';
+         image.src = 'img/' + name;
+      }
+      function reblur(e) {
+         let image = e.target;
+         let name = image.id;
+         name = name + 'blur.jpg';
          image.src = 'img/' + name;
       }
    </script>
