@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Treasure coordinates</title>
+   <script>
+      window.onload = init;
+      function init() {
+         let map = document.getElementById('map');
+         map.onmousemove = showCoords;
+      }
+
+      function showCoords(e) {
+         let map = document.getElementById('coords');
+         let x = e.clientX;
+         let y = e.clientY;
+         map.innerHTML = "Map coordinates: " + x + ", " + y;
+      }
+   </script>
+</head>
+<body>
+   <img id="map" src="map.jpg" alt="">
+   <p id="coords">Move mouse to find coordinates...</p>
+</body>
+</html>
