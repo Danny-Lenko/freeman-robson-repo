@@ -6,6 +6,14 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Flying Checks</title>
    <script>
+
+   let passengers = [  
+      { name: "Jane Doloop", paid: true, ticket: "coach" },
+		{ name: "Dr. Evel", paid: true, ticket: "firstclass" },
+		{ name: "Sue Property", paid: false, ticket: "firstclass" },
+		{ name: "John Funcall", paid: true, ticket: "premium" } 
+   ];
+
       function checkPassengers(passengers, checkingFunction) {
          for (let i = 0; i < passengers.length; i++) {
             if (checkingFunction(passengers[i])) {
@@ -16,11 +24,28 @@
       }
 
       function checkNoFlyList(passenger) {
-         return (passenger.name === "Dr. Evil");
+         return (passenger.name === "Dr. Evel");
       }
+
       function checkNotPaid(passenger) {
          return (!passenger.paid);
       }
+
+      function printPassengers(passenger) {
+         console.log(`Passenger name is: ${passenger.name}, payment status: ${passenger.paid}`);
+         return false
+      }
+
+      let allCanFly = checkPassengers(passengers, checkNoFlyList);
+      if (!allCanFly) {
+         console.log("The plane can't take off: we have a passenger on the no-fly-list.");
+      }
+      let allPaid = checkPassengers(passengers, checkNotPaid);
+      if (!allPaid) {
+         console.log("The plane can't take off: not everyone has paid.");
+      }
+      checkPassengers(passengers, printPassengers);
+
    </script>
 </head>
 <body>
