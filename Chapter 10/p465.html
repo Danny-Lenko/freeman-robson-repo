@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Flying Checks</title>
+   <script>
+      function checkPassengers(passengers, checkingFunction) {
+         for (let i = 0; i < passengers.length; i++) {
+            if (checkingFunction(passengers[i])) {
+               return false;
+            }
+         }
+         return true;
+      }
+
+      function checkNoFlyList(passenger) {
+         return (passenger.name === "Dr. Evil");
+      }
+      function checkNotPaid(passenger) {
+         return (!passenger.paid);
+      }
+   </script>
+</head>
+<body>
+   
+</body>
+</html>
