@@ -18,18 +18,36 @@
          { name: "Water", calories: 0, color: "clear", sold: 62123 }
       ];
 
-      function compareByProperty(cola1, cola2) {
+      function compareBySold(cola1, cola2) {
          return cola1.sold - cola2.sold;
+      }
+
+      function compareName(cola1, cola2) {
+         if (cola1.name > cola2.name) {
+            return 1;
+         } else if (cola1.name === cola2.name) {
+            return 0;
+         } else {
+            return -1;
+         }
       }
 
       function displaySortedObject(object) {
          for (let i = 0; i < object.length; i++) {
-            console.log(`Name: ${object[i].name}; sold: ${object[i].sold}`);
+            console.log(`Name: ${object[i].name}; sold: ${object[i].sold}; calories: ${object[i].calories}`);
          }
       }
 
-      products.sort(compareByProperty);
+      products.sort(compareBySold);
+      console.log("Products sorted by sails:")
       displaySortedObject(products);
+
+      products.sort(compareName);
+      console.log("Products sorted by name:");
+      displaySortedObject(products);
+
+      
+
 
    </script>
 </head>
