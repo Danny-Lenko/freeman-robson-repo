@@ -6,6 +6,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Cola</title>
    <script>
+
       let products = [ 
          { name: "Grapefruit", calories: 170, color: "red", sold: 8200 },
          { name: "Orange", calories: 160, color: "orange", sold: 12101 },
@@ -17,7 +18,18 @@
          { name: "Water", calories: 0, color: "clear", sold: 62123 }
       ];
 
-      
+      function compareByProperty(cola1, cola2) {
+         return cola1.sold - cola2.sold;
+      }
+
+      function displaySortedObject(object) {
+         for (let i = 0; i < object.length; i++) {
+            console.log(`Name: ${object[i].name}; sold: ${object[i].sold}`);
+         }
+      }
+
+      products.sort(compareByProperty);
+      displaySortedObject(products);
 
    </script>
 </head>
