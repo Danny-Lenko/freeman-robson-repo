@@ -32,6 +32,12 @@
          }
       }
 
+      function compareCalories(cola1, cola2) {
+        return cola1.calories - cola2.calories;
+      }
+
+      
+
       function displaySortedObject(object) {
          for (let i = 0; i < object.length; i++) {
             console.log(`Name: ${object[i].name}; sold: ${object[i].sold}; calories: ${object[i].calories}`);
@@ -46,7 +52,11 @@
       console.log("Products sorted by name:");
       displaySortedObject(products);
 
-      
+      products.sort(compareCalories);
+      console.log("Products sorted by calories:");
+      displaySortedObject(products);
+
+
 
 
    </script>
