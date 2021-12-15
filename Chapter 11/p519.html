@@ -8,19 +8,20 @@
    <script>
 
       function makeCounter() {
-         let counter = 0;
+         let count = 0;
 
-         function count() {
-            counter++;
-            return counter;
-         }
-         return count;
+         return {
+            increment: function() {
+               count++;
+               return count;
+            }
+         };
       }
 
       let makeCounterResult = makeCounter();
-      console.log(makeCounterResult());
-      console.log(makeCounterResult());
-      console.log(makeCounterResult());
+      console.log(makeCounterResult.increment());
+      console.log(makeCounterResult.increment());
+      console.log(makeCounterResult.increment());
 
    </script>
 </head>
