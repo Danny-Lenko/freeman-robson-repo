@@ -6,19 +6,22 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Recursive counter</title>
    <script>
+
       function makeCounter() {
-         let count = 0;
-         function counter() {
-            count++;
-            return count;
+         let counter = 0;
+
+         function count() {
+            counter++;
+            return counter;
          }
-         return counter;
+         return count;
       }
 
-      let doCount = makeCounter();
-      console.log(doCount());
-      console.log(doCount());
-      console.log(doCount());
+      let makeCounterResult = makeCounter();
+      console.log(makeCounterResult());
+      console.log(makeCounterResult());
+      console.log(makeCounterResult());
+
    </script>
 </head>
 <body>
