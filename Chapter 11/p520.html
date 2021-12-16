@@ -7,15 +7,25 @@
    <title>Recursion Tasks</title>
    <script>
 
-      function checkPassword(password) {
-         function guessPassword(passwordGuess) {
-            return (password === passwordGuess);
+      // function checkPassword(password) {
+      //    function guessPassword(passwordGuess) {
+      //       return (password === passwordGuess);
+      //    }
+      //    return guessPassword;
+      // }
+      // let userPassword = checkPassword('howdy');
+      // console.log(`Checking nope: ${userPassword('nope')}`);
+      // console.log(`Checking howdy: ${userPassword('howdy')}`);
+
+      function multN(n) {
+         function multNums(m) {
+            return n * m;
          }
-         return guessPassword;
+         return multNums;
       }
-      let userPassword = checkPassword('howdy');
-      console.log(`Checking nope: ${userPassword('nope')}`);
-      console.log(`Checking howdy: ${userPassword('howdy')}`);
+      let multResult = multN(3);
+      console.log(multResult(4));
+      console.log(multResult(5));
 
    </script>
 </head>
