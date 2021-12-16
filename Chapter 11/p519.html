@@ -7,6 +7,23 @@
    <title>Recursive counter</title>
    <script>
 
+      function makeCounter() {
+         let count = 0;
+
+         let counter = {
+            increment: function() {
+               count++;
+               return count;
+            }
+         };
+         return counter;
+      }
+      let keepResult = makeCounter();
+      console.log(keepResult.increment());
+      console.log(keepResult.increment());
+      console.log(keepResult.increment());
+      console.log(keepResult.increment());
+
 
    </script>
 </head>
