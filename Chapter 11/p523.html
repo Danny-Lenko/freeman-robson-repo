@@ -10,7 +10,16 @@
       div {padding: 10px;}
    </style>
    <script>
-      
+      window.onload = function() {
+         let messageEl = document.querySelector('#message');
+         let counter = 0;
+         let message = `You clicked me `; 
+
+         document.querySelector('#clickme').addEventListener('click', function() {
+            counter++
+            messageEl.innerHTML = message + counter + ' times';
+         })
+      }
    </script>
 </head>
 <body>
