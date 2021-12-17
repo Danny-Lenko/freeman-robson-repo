@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Cars Task</title>
+   <script>
+      function Cars(make, model, year, color, passengers, convertible, mileage, started) {
+         this.make = make;
+         this.model = model;
+         this.year = year;
+         this.color = color;
+         this.passengers = passengers;
+         this.convertible = convertible;
+         this.mileage = mileage;
+         this.started = started;
+
+         this.start = function() {
+            this.started = true;
+         };
+         
+         this.stop = function() {
+            this.started = false;
+         };
+
+         this.drive = function() {
+            if (this.started) {
+               console.log(this.make + "" + this.model + " goes zoom zoom!");
+            } else {
+               console.log("Start the engine first.");
+            }
+         };
+         
+      }
+   </script>
+</head>
+<body>
+   
+</body>
+</html>
