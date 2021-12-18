@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Car Maker</title>
+   <script>
+      function CarPrototype() {
+         this.make = param.make;
+         this.model = param.model;
+         this.station = param.station;
+         this.color = param.color;
+         this.wheel = param.wheel;
+         this.fuel = param.fuel;
+         this.stereo = param.stereo;
+         this.started = false;
+         
+         this.start = function() {
+            this.started = true;
+         };
+
+         this.stop = function() {
+            this.started = false;
+         };
+
+         this.drive = function() {
+            if (this.started === true && this.fuel === gas) {
+               console.log(`A ${this.color} ${this.make} ${this.model} makes ZOOM ZOOM`);
+            } else if (this.started === true && this.fuel === diesel) {
+               console.log(`A ${this.color} ${this.make} ${this.model} makes BROOM BROOM`);
+            } else {
+               console.log(`You need to start an engine first!`);
+            }
+         };
+      }
+
+      
+
+   </script>
+</head>
+<body>
+   
+</body>
+</html>
