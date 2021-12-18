@@ -6,7 +6,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Car Maker</title>
    <script>
-      function CarPrototype() {
+      function CarPrototype(param) {
          this.make = param.make;
          this.model = param.model;
          this.station = param.station;
@@ -25,9 +25,9 @@
          };
 
          this.drive = function() {
-            if (this.started === true && this.fuel === gas) {
+            if (this.started === true && this.fuel === "gas") {
                console.log(`A ${this.color} ${this.make} ${this.model} makes ZOOM ZOOM`);
-            } else if (this.started === true && this.fuel === diesel) {
+            } else if (this.started === true && this.fuel === "diesel") {
                console.log(`A ${this.color} ${this.make} ${this.model} makes BROOM BROOM`);
             } else {
                console.log(`You need to start an engine first!`);
@@ -35,7 +35,26 @@
          };
       }
 
+      let wagonparam = {
+         make: "Renault", model: "Megan", station: "wagon", 
+         color: "black", wheel: 16, fuel: "diesel", stereo: false
+      }
+      let wagon = new CarPrototype(wagonparam);
       
+      let sedanparam = {
+         make: "Renault", model: "Megan", station: "sedan", 
+         color: "grey", wheel: 17, fuel: "gas", stereo: true
+      }
+      let sedan = new CarPrototype(sedanparam);
+
+      let cars = [wagon, sedan];
+      for (let i = 0; i < cars.length; i++) {
+         cars[i].drive();
+         cars[i].start();
+         cars[i].drive();
+         cars[i].drive();
+         cars[i].stop();
+      }
 
    </script>
 </head>
