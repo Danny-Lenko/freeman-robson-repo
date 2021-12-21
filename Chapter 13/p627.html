@@ -6,30 +6,65 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Palindrom Task</title>
    <script>
-      String.prototype.cliche = function() {
-         let cliche = ['lock and load', 'touch base', 'open the kimono'];
+      // String.prototype.cliche = function() {
+      //    let cliche = ['lock and load', 'touch base', 'open the kimono'];
 
-         for (let i = 0; i < cliche.length; i++) {
-            let index = this.indexOf(cliche[i]);
-            if (index >= 0) {
-               return true;
-            }
+      //    for (let i = 0; i < cliche.length; i++) {
+      //       let index = this.indexOf(cliche[i]);
+      //       if (index >= 0) {
+      //          return true;
+      //       }
+      //    }
+      //    return false;
+      // }
+
+      String.prototype.palindrom = function() {
+         // let char1 = this[0];
+         // let char10 = this[this.length - 1];
+         // if (char1 === char10) {
+         //    let char2 = this[1];
+         //    let char20 = this[this.length - 2];
+         //    if (char2 === char20) {
+         //       let char3 = this[2];
+         //       let char30 = this[this.length - 3];
+         //       if (char3 === char30) {
+         //       return true;
+         //       }
+         //    }
+         // }
+         // return false;
+
+         const middle = Math.floor(this.length / 2);
+         const inception = this.substr(0, middle);
+         const over = this.substr(middle + 1);
+         const overAnotherWay = over.split("").reverse().join("");
+         if (inception === overAnotherWay) {
+            return true;
          }
          return false;
       }
 
-      let sentences = [
-         "I'll send my car around to pick you up",
-         "Let's touch base in the morning and see where we are",
-         "We don't want to open the kimono, we just want to inform them."
-      ];
+      let stringsToCheck = ["kazak", "devoloved", "castaspell", "whatinpocket"];
 
-      for (let i = 0; i < sentences.length; i++) {
-         let phrase = sentences[i];
-         if (phrase.cliche()) {
-            console.log(`CLICHE ALERT: ${phrase}`)
+      for (let i = 0; i < stringsToCheck.length; i++) {
+         let phrase = stringsToCheck[i];
+         if (phrase.palindrom()) {
+            console.log(`PALINDROM ALERT: ${phrase}`);
          }
       }
+
+      // let sentences = [
+      //    "I'll send my car around to pick you up",
+      //    "Let's touch base in the morning and see where we are",
+      //    "We don't want to open the kimono, we just want to inform them."
+      // ];
+
+      // for (let i = 0; i < sentences.length; i++) {
+      //    let phrase = sentences[i];
+      //    if (phrase.cliche()) {
+      //       console.log(`CLICHE ALERT: ${phrase}`)
+      //    }
+      // }
    </script>
 </head>
 <body>
